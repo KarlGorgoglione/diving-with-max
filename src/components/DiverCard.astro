@@ -1,0 +1,21 @@
+---
+import { Image } from '@astrojs/image/components';
+
+export interface Props {
+    name: string,
+    photo: ImageMetadata,
+}
+
+const { name, photo } = Astro.props as Props;
+---
+<div class="flex items-center">
+    <Image class="rounded-full outline outline-4 outline-white shadow" src={photo} width={300} height={300}/>
+    <div class="p-5 bg-white text-blue-800 rounded shadow relative -left-12">
+        <div class="bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent">
+            <h3 class="text-2xl font-medium">{name}</h3>
+        </div>
+        <p class="text-black max-w-xs">
+            <slot />
+        </p>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/image": "^0.3.4",
+    "@astrojs/partytown": "^1.0.0",
+    "@astrojs/prefetch": "^0.0.7",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/tailwind": "^1.0.0",
+    "astro": "^1.0.5"
+  },
+  "dependencies": {
+    "astro-seo": "^0.5.1"
+  }
+}

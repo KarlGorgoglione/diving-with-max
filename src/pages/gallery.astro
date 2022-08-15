@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from '@astrojs/image/components';
+
+const images_col_1 = [1, 2, 3, 4];
+const images_col_2 = [5, 6, 7, 8];
+const images_col_3 = [9, 10, 11];
+const columns = [images_col_1, images_col_2, images_col_3];
+const imagesPromise = columns.map(elem => elem.map(async id => (await import(`../assets/gallery/${id}.jpeg`)).default));
+const test = await Promise.all(imagesPromise.map(async images => await Promise.all(images)));
+
+---
+
+<Layout title="Diving with Max - Gallery">
+	<main class="my-20">
+		<h1 class="text-blue-900 text-6xl font-black text-center">Gallery</h1>
+		<div class="flex flex-wrap justify-center gap-3 container mx-auto">
+			{test.map(col => (
+				<div class="flex-[calc(33%-12px)] max-w-[calc(33%-12px)]">
+				{ col.map(image => (
+					<div class="my-3 cursor-pointer">
+						<Image class="rounded" src={image} />
+					</div>
+				))
+				}
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
