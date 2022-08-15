@@ -16,7 +16,11 @@ const test = await Promise.all(imagesPromise.map(async images => await Promise.a
 		<h1 class="text-blue-900 text-6xl font-black text-center">Gallery</h1>
 		<div class="flex flex-wrap justify-center gap-3 container mx-auto">
 			{test.map(col => (
-				<div class="flex-[calc(33%-12px)] max-w-[calc(33%-12px)]">
+				<div class="
+				flex-[calc(100%-12px)] max-w-[calc(100%-12px)]
+				xl:flex-[calc(33%-12px)] xl:max-w-[calc(33%-12px)]
+				sm:flex-[calc(50%-12px)] sm:max-w-[calc(50%-12px)]
+				">
 				{ col.map(image => (
 					<div class="my-3 cursor-pointer">
 						<Image class="rounded" src={image} />
