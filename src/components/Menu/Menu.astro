@@ -1,3 +1,13 @@
-<div class="flex items-center mx-3 gap-3">
-    <slot />
+<div class="
+bg-white
+lg:mx-3
+">
+    <div class="block absolute w-8 h-6 right-4 top-4 cursor-pointer lg:hidden mx-3 pointer-events-none">Icon</div>
+    <input class="block absolute w-8 h-6 mx-3 right-4 top-4 opacity-0 cursor-pointer peer" type="checkbox">
+    <div class="
+        lg:!flex lg:items-center lg:static lg:w-min
+        gap-3 w-screen absolute left-0 bg-white top-14 text-center hidden peer-checked:block">
+        <slot />
+    </div>
+    
 </div>
