@@ -1,0 +1,44 @@
+---
+import { Image } from '@astrojs/image/components';
+
+export interface Props {
+    images: ImageMetadata[],
+}
+
+const { images } = Astro.props as Props;
+
+const nbColumns = 4;
+let rest = images.length % nbColumns;
+const factorial = ~~(images.length / nbColumns);
+const test = []
+let i = 0;
+while (i < (images.length)) {
+    let sectionIdx = rest > 0 ? i + factorial + 1 : i + factorial;
+    test.push(images.slice(i, sectionIdx));
+    rest--;
+    if (rest >= 0) i = i + factorial + 1;
+    else i = i + factorial;
+}
+
+//test.push(images.slice(images.length - rest));
+// console.log(test);
+---
+
+<div>
+    <div class="flex flex-wrap gap-3 container mx-auto">
+        {test.map((col, idx1) => (
+            <div class="
+            flex-[calc(100%-12px)] max-w-[calc(100%-12px)]
+            xl:flex-[calc(25%-12px)] xl:max-w-[calc(25%-12px)]
+            sm:flex-[calc(50%-12px)] sm:max-w-[calc(50%-12px)]
+            ">
+            { col.map((image, idx2) => (
+                <div class="my-3 cursor-pointer">
+                    <Image class="rounded" src={image} format="avif" alt={`image_${idx1}_${idx2}`}/>
+                </div>
+            ))
+            }
+            </div>
+        ))}
+    </div>
+</div>
