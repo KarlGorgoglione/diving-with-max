@@ -1,141 +1,150 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import fish from '../assets/icons/fish.svg';
-import dive from '../assets/icons/dive.svg';
-import group from '../assets/icons/group.svg';
-import CardIcon from '../components/CardIcon.astro';
-import maxime from '../assets/maxime.jpeg';
-import karl from '../assets/karl.jpeg';
-import DiverCard from '../components/DiverCard.astro';
-import PricingCard from '../components/PricingCard.astro';
+import Layout from "../layouts/Layout.astro";
+import fish from "../assets/icons/fish.svg";
+import dive from "../assets/icons/dive.svg";
+import group from "../assets/icons/group.svg";
+import CardIcon from "../components/CardIcon.astro";
+import maxime from "../assets/maxime.jpeg";
+import karl from "../assets/karl.jpeg";
+import DiverCard from "../components/DiverCard.astro";
+import PricingCard from "../components/PricingCard.astro";
 
 const priceList = {
-	recreational: [
-		{
-			title: "PADI Scuba Diver",
-			price: 99.99
-		},
-		{
-			title: "Open Water Diver",
-			price: 99.99
-		},
-		{
-			title: "Advanced Open Water Diver",
-			price: 99.99
-		},
-		{
-			title: "Rescue Diver",
-			price: 99.99
-		},
-	],
-	professional: [
-		{
-			title: "Dive Master",
-			price: 599.99
-		},
-		{
-			title: "Assistant Instructor",
-			price: 599.99
-		},
-		{
-			title: "Open Water Scuba Instructor",
-			price: 599.99
-		},
-		{
-			title: "Master Scuba Diver Trainer",
-			price: 599.99
-		},
-		{
-			title: "IDC Staff Instructor",
-			price: 599.99
-		},
-		{
-			title: "Master Scuba Instructor",
-			price: 599.99
-		},
-		{
-			title: "Course Director",
-			price: 599.99
-		},
-	]
+  recreational: [
+    {
+      title: "PADI Scuba Diver",
+      price: 99.99,
+    },
+    {
+      title: "Open Water Diver",
+      price: 99.99,
+    },
+    {
+      title: "Advanced Open Water Diver",
+      price: 99.99,
+    },
+    {
+      title: "Rescue Diver",
+      price: 99.99,
+    },
+  ],
+  professional: [
+    {
+      title: "Dive Master",
+      price: 599.99,
+    },
+    {
+      title: "Assistant Instructor",
+      price: 599.99,
+    },
+    {
+      title: "Open Water Scuba Instructor",
+      price: 599.99,
+    },
+    {
+      title: "Master Scuba Diver Trainer",
+      price: 599.99,
+    },
+    {
+      title: "IDC Staff Instructor",
+      price: 599.99,
+    },
+    {
+      title: "Master Scuba Instructor",
+      price: 599.99,
+    },
+    {
+      title: "Course Director",
+      price: 599.99,
+    },
+  ],
 };
 ---
 
 <Layout title="Diving with Max">
-	<main class="my-14">
-		<div class="w-full h-[calc(100vh-3.5rem)] bg-[url('/src/assets/cover.avif')] bg-cover bg-center relative rounded-lg">
-			<h1 class="absolute top-8 text-white text-6xl font-black text-center w-full">Explore the ocean.</h1>
-			<div class="bg-white rounded p-12 absolute bottom-16 left-16">
-				<p>
-					Explore the marvels of the ocean in Costa Rica.<br />
-					Get your diving certifications from professional divers.<br /><br />
+  <main class="my-14">
+    <div
+      class="w-full h-[calc(100vh-3.5rem)] bg-[url('/src/assets/cover.avif')] bg-cover bg-center relative rounded-lg"
+    >
+      <h1
+        class="absolute top-8 text-white text-6xl font-black text-center w-full"
+      >
+        Explore the ocean.
+      </h1>
+      <div class="bg-white rounded p-12 absolute bottom-16 left-16">
+        <p>
+          Explore the marvels of the ocean in Costa Rica.<br />
+          Get your diving certifications from professional divers.<br /><br />
 
-					Have fun!
-				</p>
-			</div>
-		</div>
-		<div class="h-auto w-full my-16 flex items-center justify-center flex-wrap gap-5">
-			<CardIcon icon={fish} title="Breathtaking marine landscapes">
-				Bla bla bla bla bla oqiwneoiqnwioejn qiwjeoi qjiwopej
-				eljqwheohqoiwhjqwhediowjqioed hoqwnbedj wnoefod iwnef 
-				ewfh wioef
-				we diweifw<br />
-				wejrbwoerjwop
-			</CardIcon>
-			<CardIcon icon={dive} title="Professional training">
-				Bla bla bla bla bla oqiwneoiqnwioejn qiwjeoi qjiwopej
-				eljqwheohqoiwhjqwhediowjqioed hoqwnbedj wnoefod iwnef 
-				ewfh wioef
-				we diweifw<br />
-				wejrbwoerjwop
-			</CardIcon>
-			<CardIcon icon={group} title="Group lessons and more">
-				Bla bla bla bla bla oqiwneoiqnwioejn qiwjeoi qjiwopej
-				eljqwheohqoiwhjqwhediowjqioed hoqwnbedj wnoefod iwnef 
-				ewfh wioef
-				we diweifw<br />
-				wejrbwoerjwop
-			</CardIcon>
-		</div>
-		<div class="bg-blue-800 p-5 text-white">
-			<h2 class="text-center text-4xl font-bold">Our divers</h2>
-			<div class="my-5">
-				<div class="flex flex-wrap justify-center items-center gap-8">
-					<DiverCard photo={maxime} name="Maxime">
-						The master of diving. Nobody is as good as this guy.<br />
-            			Strong feet, pushes the water easily.<br />
-            			36+ years of experience.
-					</DiverCard>
-					<DiverCard photo={karl} name="Karl">
-						Terrible at diving.<br />
-						Once almost drown in his own bathroom.<br />
-						Although extremely attractive.
-					</DiverCard>
-				</div>
-			</div>
-		</div>
-		<div class="bg-white p-5 text-black">
-			<h2 class="text-center text-4xl font-bold">Pricing</h2>
-			<div class="my-5">
-				<h3 class="text-2xl font-bold text-center my-3">Recreational</h3>
-				<div class="flex flex-wrap justify-center items-center gap-8">
-					{ priceList.recreational.map(price => (
-						<div class="max-w-sm">
-							<PricingCard title={price.title} price={price.price}/>
-						</div>
-					))}
-				</div>
-			</div>
-			<div class="my-5">
-				<h3 class="text-2xl font-bold text-center my-3">Professional</h3>
-				<div class="flex flex-wrap justify-center items-center gap-8">
-					{ priceList.professional.map(price => (
-						<div class="max-w-sm">
-							<PricingCard title={price.title} price={price.price}/>
-						</div>
-					))}
-				</div>
-			</div>
-		</div>
-	</main>
+          Have fun!
+        </p>
+      </div>
+    </div>
+    <div
+      class="h-auto w-full my-16 flex items-center justify-center flex-wrap gap-5"
+    >
+      <CardIcon icon={fish} title="Breathtaking marine landscapes">
+        Bla bla bla bla bla oqiwneoiqnwioejn qiwjeoi qjiwopej
+        eljqwheohqoiwhjqwhediowjqioed hoqwnbedj wnoefod iwnef ewfh wioef we
+        diweifw<br />
+        wejrbwoerjwop
+      </CardIcon>
+      <CardIcon icon={dive} title="Professional training">
+        Bla bla bla bla bla oqiwneoiqnwioejn qiwjeoi qjiwopej
+        eljqwheohqoiwhjqwhediowjqioed hoqwnbedj wnoefod iwnef ewfh wioef we
+        diweifw<br />
+        wejrbwoerjwop
+      </CardIcon>
+      <CardIcon icon={group} title="Group lessons and more">
+        Bla bla bla bla bla oqiwneoiqnwioejn qiwjeoi qjiwopej
+        eljqwheohqoiwhjqwhediowjqioed hoqwnbedj wnoefod iwnef ewfh wioef we
+        diweifw<br />
+        wejrbwoerjwop
+      </CardIcon>
+    </div>
+    <div class="bg-blue-800 p-5 text-white">
+      <h2 class="text-center text-4xl font-bold">Our divers</h2>
+      <div class="my-5">
+        <div class="flex flex-wrap justify-center items-center gap-8">
+          <DiverCard photo={maxime} name="Maxime">
+            The master of diving. Nobody is as good as this guy.<br />
+            Strong feet, pushes the water easily.<br />
+            36+ years of experience.
+          </DiverCard>
+          <DiverCard photo={karl} name="Karl">
+            Terrible at diving.<br />
+            Once almost drown in his own bathroom.<br />
+            Although extremely attractive.
+          </DiverCard>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white p-5 text-black">
+      <h2 class="text-center text-4xl font-bold">Pricing</h2>
+      <div class="my-5">
+        <h3 class="text-2xl font-bold text-center my-3">Recreational</h3>
+        <div class="flex flex-wrap justify-center items-center gap-8">
+          {
+            priceList.recreational.map((price) => (
+              <div class="max-w-sm">
+                <PricingCard title={price.title} price={price.price} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="my-5">
+        <h3 class="text-2xl font-bold text-center my-3">Professional</h3>
+        <div class="flex flex-wrap justify-center items-center gap-8">
+          {
+            priceList.professional.map((price) => (
+              <div class="max-w-sm">
+                <PricingCard title={price.title} price={price.price} />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>

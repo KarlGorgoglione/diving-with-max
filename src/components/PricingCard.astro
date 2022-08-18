@@ -1,29 +1,35 @@
 ---
 export interface Props {
-    title: string,
-    price: number,
+  title: string;
+  price: number;
 }
 
 const { title, price } = Astro.props as Props;
 ---
 
 <a href="/" class="relative group">
-    <div class="rounded shadow p-5 border border-gray-200 opacity-100 transition-all group-hover:opacity-0">
-        <h3 class="text-xl text-center font-bold text-blue-500 my-3">{title}</h3>
-        <p>
-            This is a chill class, you will be diving the whole day with Max and see lots of turtles.<br />
-            Sometimes you will see other stuff like turtles and so on.<br />
-            But most of the time it's about turtles.
-        </p>
-        <div class="text-2xl text-center font-black my-3 bg-gradient-to-r from-blue-300 to-blue-800 bg-clip-text text-transparent">
-            {`${price}$ / Session`}
-        </div>
+  <div
+    class="rounded shadow p-5 border border-gray-200 opacity-100 transition-all group-hover:opacity-0"
+  >
+    <h3 class="text-xl text-center font-bold text-blue-500 my-3">
+      {title}
+    </h3>
+    <p>
+      This is a chill class, you will be diving the whole day with Max and see
+      lots of turtles.<br />
+      Sometimes you will see other stuff like turtles and so on.<br />
+      But most of the time it's about turtles.
+    </p>
+    <div
+      class="text-2xl text-center font-black my-3 bg-gradient-to-r from-blue-300 to-blue-800 bg-clip-text text-transparent"
+    >
+      {`${price}$ / Session`}
     </div>
-    <div class="
-    absolute rounded top-0 left-0 w-full h-full bg-blue-800 text-center grid place-content-center
-    transition-all opacity-0 group-hover:opacity-100 group-hover:rounded-full
-    ">
-        <span class="text-xl text-center font-bold text-white my-3">{title}</span>
-        <span class="text-white text-4xl font-black">Book Now!</span>
-    </div>
+  </div>
+  <div
+    class="absolute rounded top-0 left-0 w-full h-full bg-blue-800 text-center grid place-content-center transition-all opacity-0 group-hover:opacity-100 group-hover:rounded-full"
+  >
+    <span class="text-xl text-center font-bold text-white my-3">{title}</span>
+    <span class="text-white text-4xl font-black">Book Now!</span>
+  </div>
 </a>

@@ -1,13 +1,15 @@
 ---
 export interface Props {
-    icon: string,
-    title: string,
+  icon: string;
+  title: string;
 }
 
 const { icon, title } = Astro.props as Props;
 ---
+
 <div class="p-5 rounded shadow w-96 text-center">
-    <img class="inline text-center" src={icon} width={48} height={48} alt={title}/>
-    <h2 class="text-xl font-bold my-3">{title}</h2>
-    <p><slot /></p>
+  <img class="inline text-center" src={icon} width={48} height={48} alt={title}
+  />
+  <h2 class="text-xl font-bold my-3">{title}</h2>
+  <p><slot /></p>
 </div>

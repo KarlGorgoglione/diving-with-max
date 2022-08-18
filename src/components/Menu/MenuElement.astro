@@ -1,14 +1,14 @@
 ---
 export interface Props {
-    name: string
+  name: string;
 }
 
 const { name } = Astro.props as Props;
 ---
-<a 
-    class="
-    block p-3 lg:rounded-xl transition-all hover:bg-blue-500 active:bg-blue-500 hover:text-white
-    "
-    href={`/${name.toLowerCase() === 'home' ? '' : name.toLowerCase()}`}>
-    {name}
+
+<a
+  class="block p-3 lg:rounded-xl transition-all hover:bg-blue-500 active:bg-blue-500 hover:text-white"
+  href={`/${name.toLowerCase() === "home" ? "" : name.toLowerCase()}`}
+>
+  {name}
 </a>

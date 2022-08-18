@@ -1,14 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ResponsiveGallery from '../components/ResponsiveGallery.astro';
+import Layout from "../layouts/Layout.astro";
+import ResponsiveGallery from "../components/ResponsiveGallery.astro";
 
-const images = (await Astro.glob("../assets/gallery/*.jpeg")).map(image => image.default);
-
+const images = (await Astro.glob("../assets/gallery/*.jpeg")).map(
+  (image) => image.default
+);
 ---
 
 <Layout title="Diving with Max - Gallery">
-	<main class="my-20">
-		<h1 class="text-blue-900 text-6xl font-black text-center">Gallery</h1>
-		<ResponsiveGallery images={images} />
-	</main>
+  <main class="my-20">
+    <h1 class="text-blue-900 text-6xl font-black text-center">Gallery</h1>
+    <ResponsiveGallery images={images} />
+  </main>
 </Layout>
